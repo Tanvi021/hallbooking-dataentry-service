@@ -58,17 +58,14 @@ const BookingForm = ({ selectedBooking, onClose }) => {
 
   // Disable past dates for start date
   const disabledStartDate = (current) => {
-    return current && current <= moment().startOf('day');
+    return current && current < moment().startOf('day');
   };
 
   // Disable dates earlier than start date for end date
   const disabledEndDate = (current) => {
-    const startDate = form.getFieldValue('startDate');
-    if (!startDate) {
-      return current && current < moment().startOf('day');
-    }
-    return current && current <= moment(startDate).startOf('day');
-  };
+  const startDate = form.getFieldValue('startDate');
+  return startDate ? current && current < moment(startDate).startOf('day') : current && current < moment().startOf('day');
+};
 
   // Enforce input limits
   const enforceInputLimit = (e, maxDigits) => {
@@ -84,24 +81,25 @@ const BookingForm = ({ selectedBooking, onClose }) => {
         startDate: values.startDate.format('YYYY-MM-DD'),
         endDate: values.endDate.format('YYYY-MM-DD'),
         receiptDate: values.receiptDate.format('YYYY-MM-DD'),
-        receiptNo: form.getFieldValue('receiptNo'), // Use generated receipt number
+        receiptNo: form.getFieldValue('receiptNo'),
       };
-
+  
       if (selectedBooking) {
+        // Update existing booking
         await updateBooking(selectedBooking.id, bookingData);
         message.success('Booking updated successfully!');
       } else {
+        // Create new booking
         await createBooking(bookingData);
         message.success('Booking created successfully!');
-        setLastReceiptNo(bookingData.receiptNo); // Update last receipt number after successful submission
       }
-
-      onClose();
+  
+      onClose(bookingData); // Send updated or new booking back to parent component
     } catch (error) {
       message.error('Failed to save booking. Please try again.');
       console.error(error);
     }
-  };
+  };  
 
   return (
     <div style={{

@@ -33,8 +33,10 @@ public class BookingServiceImpl implements BookingService{
 
 	@Override
 	public Booking updateBooking(Booking booking) {
-		
-		return bookingRepository.save(booking);
+	    if (booking.getId() != null) {
+	        return bookingRepository.save(booking);
+	    }
+	    throw new IllegalArgumentException("Booking ID is required for update");
 	}
 
 	@Override

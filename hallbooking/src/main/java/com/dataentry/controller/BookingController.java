@@ -41,26 +41,26 @@ public class BookingController {
 
     @PatchMapping("/bookings/{id}")
     public ResponseEntity<Booking> updateBooking(@PathVariable("id") Integer id, @RequestBody Booking booking) {
-    	Booking bookObj = bookingService.getBookingById(id);
-    	if(bookObj != null) {
-    		bookObj.setApplicantName(booking.getApplicantName());
-    		bookObj.setEmail(booking.getEmail());
-    		bookObj.setMobileNo(booking.getMobileNo());
-    		bookObj.setStartDate(booking.getStartDate());
-    		bookObj.setEndDate(booking.getEndDate());
-    		bookObj.setRent(booking.getRent());
-    		bookObj.setAdditionalCharges(booking.getAdditionalCharges());
-    		bookObj.setTotal(booking.getTotal());
-    		bookObj.setHallName(booking.getHallName());
-    		bookObj.setBookingType(booking.getBookingType());
-    		bookObj.setTimeSlot(booking.getTimeSlot());
-    		bookObj.setStatus(booking.getStatus());
-    		bookObj.setReceiptNo(booking.getReceiptNo());
-    		bookObj.setReceiptDate(booking.getReceiptDate());
-    		bookObj.setRemark(booking.getRemark());
-    	}
-    	
-        return new ResponseEntity<>(bookingService.updateBooking(booking), HttpStatus.OK);
+        Booking existingBooking = bookingService.getBookingById(id);
+        if (existingBooking != null) {
+            existingBooking.setApplicantName(booking.getApplicantName());
+            existingBooking.setEmail(booking.getEmail());
+            existingBooking.setMobileNo(booking.getMobileNo());
+            existingBooking.setStartDate(booking.getStartDate());
+            existingBooking.setEndDate(booking.getEndDate());
+            existingBooking.setRent(booking.getRent());
+            existingBooking.setAdditionalCharges(booking.getAdditionalCharges());
+            existingBooking.setHallName(booking.getHallName());
+            existingBooking.setBookingType(booking.getBookingType());
+            existingBooking.setTimeSlot(booking.getTimeSlot());
+            existingBooking.setStatus(booking.getStatus());
+            existingBooking.setReceiptNo(booking.getReceiptNo());
+            existingBooking.setReceiptDate(booking.getReceiptDate());
+            existingBooking.setRemark(booking.getRemark());
+
+            return new ResponseEntity<>(bookingService.updateBooking(existingBooking), HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping("/bookings/{id}")

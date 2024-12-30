@@ -1,13 +1,13 @@
-//package com.dataentry;
-//
-//import org.junit.jupiter.api.Test;
-//import org.springframework.boot.test.context.SpringBootTest;
-//
-//@SpringBootTest
-//class HallbookingApplicationTests {
-//
-//	@Test
-//	void contextLoads() {
-//	}
-//
-//}
+package com.dataentry;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class HallbookingApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
