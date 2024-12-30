@@ -1,0 +1,5 @@
+package com.dataentry.repository;
+
+public interface BookingRepository {
+
+}

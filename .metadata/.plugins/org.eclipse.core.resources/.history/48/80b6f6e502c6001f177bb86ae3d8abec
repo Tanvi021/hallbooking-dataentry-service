@@ -1,0 +1,44 @@
+package com.dataentry.service;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.dataentry.entity.Booking;
+import com.dataentry.service.BookingService;
+
+@Service
+public class BookingServiceImpl implements BookingService{
+
+	@Override
+	public List<Booking> getAllBookings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Booking getBookingById(Integer bookingId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Booking addBooking(Booking booking) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Booking updateBooking(Integer id, Booking booking) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteBooking(Booking booking) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

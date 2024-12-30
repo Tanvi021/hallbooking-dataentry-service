@@ -1,0 +1,14 @@
+package com.dataentry.service;
+
+import java.util.List;
+
+import com.dataentry.entity.Booking;
+
+public interface BookingService {
+	
+	List<Booking> getAllBookings();
+	Booking getBookingById();
+	Booking addBooking(Booking booking);
+	
+	
+}

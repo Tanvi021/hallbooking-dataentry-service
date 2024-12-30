@@ -1,0 +1,5 @@
+package com.dataentry.service;
+
+public interface BookingService {
+
+}

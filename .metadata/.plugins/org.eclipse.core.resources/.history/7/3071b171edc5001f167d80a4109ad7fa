@@ -1,0 +1,5 @@
+package com.dataentry.entity;
+
+public class Booking {
+
+}
