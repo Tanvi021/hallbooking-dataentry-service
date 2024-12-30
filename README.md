@@ -118,9 +118,8 @@ Manage configurations for development, staging, and production using environment
 ## Video Explanation
 
 A detailed walkthrough of the project setup and functionality can be found here.
-<video src="https://drive.google.com/file/d/18yXI50Af6sXcGRbq7tn9wDVBlF17N35Q/view?usp=drive_link" controls width="600"></video>
 
-
+[Watch Video](https://drive.google.com/file/d/18yXI50Af6sXcGRbq7tn9wDVBlF17N35Q/view?usp=drive_link)
 ---
 
 Feel free to replace placeholders (like `your-username`, `your-repo-name`, or `http://localhost:8085`) with your actual repository details and configuration.
