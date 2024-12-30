@@ -118,6 +118,8 @@ Manage configurations for development, staging, and production using environment
 ## Video Explanation
 
 A detailed walkthrough of the project setup and functionality can be found here.
+<video src="https://drive.google.com/file/d/18yXI50Af6sXcGRbq7tn9wDVBlF17N35Q/view?usp=drive_link" controls width="600"></video>
+
 
 ---
 
