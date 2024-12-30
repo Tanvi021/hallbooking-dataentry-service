@@ -1,87 +1,124 @@
-**Hall Booking Management System**
-**Overview**
-This is a full-stack Hall Booking Management System developed using ReactJS (frontend) and Spring Boot (backend) with a PostgreSQL database. The system supports creating, reading, updating, and deleting (CRUD) bookings for halls.
+# Hall Booking Management System
 
+## Overview
 
-**Features**
-Add new bookings.
-Update existing bookings.
-Delete bookings.
-View all bookings in a tabular format.
+This project is a comprehensive Hall Booking Management System developed using ReactJS (frontend) and Spring Boot (backend) with a PostgreSQL database. It supports the creation, management, and deletion of hall bookings with a clean and interactive UI.
 
+## Features
 
-**Prerequisites**
-Before you proceed, ensure you have the following installed on your system:
+- Add new bookings.
+- Update existing bookings.
+- Delete bookings.
+- View all bookings in a structured tabular format.
 
-Node.js (v10.9.0 or higher)
-Java (v17 or higher)
-PostgreSQL
-Git
+## Prerequisites
 
+Ensure you have the following installed:
 
-**How to Run the Project**
-**Backend Setup**
-**Clone the repository:**
+- **Node.js** (v10.9.0 or higher)
+- **Java** (v17 or higher)
+- **PostgreSQL**
+- **Git**
+
+## Getting Started
+
+Follow these steps to set up and run the project:
+
+### 1. Backend Setup
+
+#### Clone the repository:
+```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+```
 
-**Navigate to the backend folder:**
+#### Navigate to the backend folder:
+```bash
 cd backend
+```
 
-**Create a configuration file for database credentials:**
-Configuration File: external-config/application.properties
-Example content:
+#### Create a configuration file for database credentials:
+
+**File Path:** `external-config/application.properties`
+
+**Example content:**
+```
 spring.datasource.url=jdbc:postgresql://localhost:5432/hall_booking
 spring.datasource.username=your_postgres_username
 spring.datasource.password=your_postgres_password
 spring.jpa.show-sql=true
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.hibernate.ddl-auto=update
+```
 
-Ensure this file is outside the source directory to avoid committing it to the repository.
+> Ensure this file is outside the source directory to avoid committing sensitive information.
 
-
-**Build the backend project:**
+#### Build the backend project:
+```bash
 mvn clean install
+```
 
-**Run the Spring Boot application:**
+#### Run the Spring Boot application:
+```bash
 mvn spring-boot:run
-The backend will start on http://localhost:8085.
+```
 
+The backend will start on [http://localhost:8085](http://localhost:8085).
 
-**Frontend Setup**
-**Navigate to the frontend folder:**
+### 2. Frontend Setup
+
+#### Navigate to the frontend folder:
+```bash
 cd frontend
+```
 
-**Install the dependencies:**
+#### Install the dependencies:
+```bash
 npm install
+```
 
-**Update the API base URL:**
-Open frontend/src/services/api.js.
+#### Configure the API base URL:
 
-**Replace the API_BASE_URL with:**
+Open `frontend/src/services/api.js` and replace the API_BASE_URL with:
+```javascript
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8085';
+```
 
-**Add a .env file in the root directory of the frontend folder:**
+#### Add a `.env` file in the root directory of the frontend folder:
+```
 REACT_APP_API_BASE_URL=http://localhost:8085
+```
 
-**Start the frontend:**
+#### Start the frontend:
+```bash
 npm run dev
-The frontend will start on http://localhost:5173.
+```
 
+The frontend will start on [http://localhost:5173](http://localhost:5173).
 
-**Deployment**
-**For deployment:**
-Ensure the .env files are configured for production servers.
-Use tools like Docker for containerization and deploying both frontend and backend.
-Security Best Practices
+## Deployment
 
-**Avoid Hardcoding Credentials:**
-Ensure all sensitive information like URLs, database credentials, and access keys are stored in .env files or external configuration files.
-Example: The database credentials are stored in external-config/application.properties, not in the source files.
+For deployment:
 
-**Environment-Specific Configuration:**
-Use environment variables to manage configurations for development, staging, and production environments.
+- Ensure `.env` files are configured with production server URLs and credentials.
+- Use containerization tools like Docker for seamless deployment.
 
-**Video Explanation**
+## Security Best Practices
+
+### Avoid Hardcoding Sensitive Information:
+
+Store sensitive data (e.g., database credentials, URLs) in `.env` files or external configuration files.
+
+> Example: Database credentials are stored in `external-config/application.properties`.
+
+### Environment-Specific Configuration:
+
+Manage configurations for development, staging, and production using environment variables.
+
+## Video Explanation
+
 A detailed walkthrough of the project setup and functionality can be found here.
+
+---
+
+Feel free to replace placeholders (like `your-username`, `your-repo-name`, or `http://localhost:8085`) with your actual repository details and configuration.
